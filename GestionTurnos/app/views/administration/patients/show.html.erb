@@ -1,0 +1,37 @@
+<br>
+<center>
+<p id="notice"><%= notice %></p>
+<br><br>
+<p>
+  <strong>Last name:</strong>
+  <%= @patient.last_name %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @patient.first_name %>
+</p>
+
+<p>
+  <strong>Dni:</strong>
+  <%= @patient.dni %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @patient.address %>
+</p>
+
+<p>
+  <strong>Coverage:</strong>
+  <%= @patient.coverage %>
+</p>
+
+<p>
+  <strong>Observations:</strong>
+  <%= @patient.observations %>
+</p>
+
+<%= link_to 'Volver', 'javascript:history.back()' %>
+
+</center>

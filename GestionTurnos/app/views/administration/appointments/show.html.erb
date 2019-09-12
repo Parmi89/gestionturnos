@@ -1,0 +1,25 @@
+
+<br><br><center>
+<h2>Turnos</h2>
+<br>
+<strong>Doctor:</strong>
+<%=  @appointment.doctor.last_name %>
+<br>
+<strong>Paciente:</strong>
+<%=  @appointment.patient.last_name %>
+<br>
+<strong>Fecha:</strong>
+<%=  @appointment.date %>
+<br>
+<strong>Motivo:</strong>
+<%=  @appointment.reason %>
+<br>
+<strong>Estado:</strong>
+<%=  @appointment.state %>
+<br>
+  
+<br><br>
+
+<%= link_to 'Modificar', edit_administration_appointment_path(@appointment) %> |
+<%= link_to 'Ver lista', administration_appointments_path(@appointment) %>
+</center>

@@ -1,0 +1,35 @@
+
+<h1>Pacientes registrados</h1>
+
+<br><center>
+<table border="3">
+  <thead>
+    <tr>
+      <th><center>Cod. Paciente</center></th>
+      <th><center>Apellido</center></th>
+      <th><center>Nombre</center></th>
+      <th><center>Dni</center></th>
+      <th><center>Direccion</center></th>
+      <th><center>Obra social</center></th>
+      <th><center>Observaciones</center></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patient.each do |patient| %>
+      <tr>
+        <td><center><%= patient.id %></center></td>
+        <td><center><%= patient.last_name %></center></td>
+        <td><center><%= patient.first_name %></center></td>
+        <td><center><%= patient.dni %></center></td>
+        <td><center><%= patient.address %></center></td>
+        <td><center><%= patient.coverage %></center></td>
+        <td><center><%= patient.observations %></center></td>
+        <td><%= link_to 'Ver solo este paciente', administration_patient_path(patient) %></td>
+        <td><%= link_to 'Modificar', edit_administration_patient_path(patient) %></td>
+        <td><%= link_to 'Eliminar', administration_patient_path(patient), method: :delete, data: { confirm: 'Seguro que desea eliminar el paciente?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>  
+</table>
+<br>

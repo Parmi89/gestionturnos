@@ -1,0 +1,35 @@
+
+<h2>Doctores activos</h2>
+<br><center>
+  
+<table border="3">
+  <thead>
+    <tr>
+      <th>Id. Doctor</th>
+      <th>Apellido</th>
+      <th>Nombre</th>
+      <th>Consultorio</th>
+      <th>Especialidad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doctors.each do |doctor| %>
+      <tr>
+        <td><center> <%= doctor.id %></center></td>
+        <td><%= doctor.last_name %></td>
+        <td><%= doctor.first_name %></td>
+        <td><center><%= doctor.consulting_room %></center></td>
+        <td><%= doctor.specialty %></td>
+        <td><%= link_to 'Ver solo este doctor', administration_doctor_path(doctor) %></td>
+        <td><%= link_to 'Modificar', edit_administration_doctor_path(doctor) %></td>
+        <td><%= link_to 'Eliminar', administration_doctor_path(doctor), method: :delete, data: { confirm: 'Usted esta seguro que desea eliminar este doctor?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div> 
+</center>
+
+

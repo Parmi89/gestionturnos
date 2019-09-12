@@ -1,0 +1,50 @@
+<center>
+  <%= form_with(model: [ :administration, patient ], local: true) do |f| %>
+ <% if patient.errors.any? %>
+  <div id="error_explanation">
+  <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+  <ul>
+    <% patient.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+<br><br>
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dni %>
+    <%= f.number_field :dni %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :coverage %>
+    <%= f.text_field :coverage %>
+  </div>
+
+  <div class="field">
+    <%= f.label :observations %>
+    <%= f.text_field :observations %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Confirmar'%>
+  </div>
+<% end %>
+</center>

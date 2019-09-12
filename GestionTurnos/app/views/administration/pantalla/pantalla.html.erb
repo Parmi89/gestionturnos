@@ -1,0 +1,21 @@
+<div id="propaganda"> 
+
+<div id="columnaderecha">
+ <br><br><tr><center><h1>PACIENTE - TURNO - CONSULTORIO</tr></center></h1><br><br><br><br>
+
+<center><h2>
+   
+    <% @appointment.each do |appointment| %>
+	<%= appointment.patient.last_name %> <%=  appointment.patient.first_name %> -
+	<%= appointment.id %> -
+    <% @doctor.each do |doctor|  %>
+    <%= doctor.consulting_room %>	<br>
+  <% end %>
+  <% end %>
+</div> 
+</div>
+<div id="titular"><h1><br><h1><center> ----> SANATORIO SAN PORONGON <---- </center> </h1></div>
+PROPAGANDA</div>
+
+
+

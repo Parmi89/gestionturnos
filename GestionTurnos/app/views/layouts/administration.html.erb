@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    </title>
+
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'administration', media: 'all' %>
+    <%= javascript_include_tag 'administration', media: 'all' %>
+
+
+
+  </head>
+
+  <body class="animated" >
+    <div id="cl-wrapper"> 
+      <%= render 'administration/shared/sidebar' %>
+       <div id="right-panel" class="right-panel">
+        <%= render 'administration/shared/navbar' %>
+        <div class="content">
+          <div class="animated fadeIn">
+                    <div class="cl-mcont">
+
+            <%= yield %>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+     
+    </div>
+
+    
+  </body>
+</html>

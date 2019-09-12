@@ -1,0 +1,37 @@
+<br>
+<center>
+<h1>Turnos</h1>
+
+<table border="3">
+  <thead>
+    <tr>
+      <th><center>Id de turno</center></th>
+      <th><center>Doctor</center></th>
+      <th><center>Paciente</center></th>
+      <th><center>Fecha</center></th>
+      <th><center>Motivo de la consulta medica</center></th>
+      <th><center>Estado del turno</th> 
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  
+    <% @appointments.each do |appointment| %>
+      <tr>
+        <td><center><%=  appointment.id %></center></td>
+        <td><center><%=  appointment.patient.last_name %></center></td>
+        <td><center><%= appointment.doctor.last_name %></center></td>
+        <td><center><%= appointment.date %></center></td>
+        <td><center><%= appointment.reason %></center></td>
+        <td><center><%= appointment.state %></center></td>
+        <td><%= link_to 'Ver', administration_appointment_path(appointment) %></td>
+        <td><%= link_to 'Modificar', edit_administration_appointment_path(appointment) %></td>
+        <td><%= link_to 'Eliminar', administration_appointment_path(appointment), method: :delete, data: { confirm: 'Usted esta seguro?' } %></td>
+      </tr>
+    <% end %>
+  
+</table>
+
+<br>
+</center>

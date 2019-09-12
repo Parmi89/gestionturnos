@@ -1,0 +1,82 @@
+<div class="cl-sidebar">
+  <div class="cl-toggle">
+    <i class="fa fa-bars"></i>
+  </div>
+  <div class="cl-navblock">
+    <div class="menu-space">
+      <div class="content">
+        <%= link_to administration_root_path do %>
+          <div class="sidebar-logo">
+            <div class="logo text-center">
+              <div class="row">
+                <div class="col-lg-12 hidden-sm hidden-xs">
+                  <%= image_tag '', class: "logo-cms" %>
+                </div>
+                <div class="hidden-lg hidden-md visible-xs-12">
+                  <%= image_tag '', class: "logo-mini"%>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <div class="side-user">
+          <div class="info">
+            <p>
+              <i class="fa fa-user"></i>
+                Panel de opciones
+            </p>
+          </div>
+        </div>
+        <ul class="cl-vnavigation">
+          <li>
+            <a href="#">
+              <i class="fa fa-folder"></i>
+              <span>Pacientes</span>
+            </a>
+            <ul class="sub-menu">
+              <li class="">
+                <%= link_to "Lisa de pacientes", administration_patients_path %>
+              </li>
+              <li>
+                <%= link_to "Nuevo paciente", new_administration_patient_path %>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-folder"></i>
+              <span>Doctores</span>
+            </a>
+            <ul class="sub-menu">
+              <li class="">
+                <%= link_to "Lista de Doctores", administration_doctors_path %>
+              </li>
+              <li>
+                <%= link_to "Dar de alta nuevo Doctor", new_administration_doctor_path %>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-folder"></i>
+              <span>Citas / Turnos</span>
+            </a>
+            <ul class="sub-menu">
+              <li class="">
+                <%= link_to "Listado de Turnos",  administration_appointments_path %>
+              </li>
+              <li>
+                <%= link_to "Dar de alta un nuevo turno", new_administration_appointment_path %>
+              </li>
+                <a target="_blank" href="http://localhost:3000/administration/pantalla">Abrir ventana de turnos</a>
+            </ul>
+          </li>
+          <li>
+
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

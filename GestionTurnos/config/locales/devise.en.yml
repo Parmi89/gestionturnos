@@ -169,3 +169,9 @@ en:
       not_saved:
         one: 'Ocurrió un error al tratar de guardar %{resource}:'
         other: 'Ocurrieron %{count} errores al tratar de guardar %{resource}:'
+
+        advertisings:
+        
+        adimnistration:
+
+           title: "titulo"

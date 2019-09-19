@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Publicidad</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Observaciones</th>
+      <th>Estado</th>
+      <th>Fecha de alta</th>
+      <th>Fecha de baja</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @advertisings.each do |advertising| %>
+      <tr>
+        <td><%= advertising.title %></td>
+        <td><%= advertising.observations %></td>
+        <td><%= advertising.state %></td>
+        <td><%= advertising.higdate %></td>
+        <td><%= advertising.lowdate %></td>
+        <td><%= link_to 'Ver', administration_advertising_path(advertising) %></td>
+        <td><%= link_to 'Modificar', edit_administration_advertising_path(advertising) %></td>
+        <td><%= link_to 'Eliminar', administration_advertising_path(advertising), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

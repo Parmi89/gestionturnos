@@ -1,0 +1,51 @@
+  <%= form_with(model: [ :administration, advertising ], local: true) do |f| %>
+  <br>
+  <% if advertising.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(advertising.errors.count, "error") %> prohibited this advertising from being saved:</h2>
+
+      <ul>
+      <% advertising.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  <%= f.label :Titulo %>
+  <%= f.text_field :title, id: :advertising_title, class: 'form-control',:maxlength => 100 %>
+  </div>
+
+    </div>
+    <div class="form-group">
+    <%= f.label :observaciones %>
+    <%= f.text_area :observations,  class: 'form-control tinymce', rows:5, cols: 12 %>
+  </div>
+
+
+<div class="field">
+  <%= f.label :Estado %>
+  <%= f.text_field :state, id: :advertising_state, class: 'form-control',:maxlength => 100 %>
+  </div> 
+<br><br><center>
+  <div class="field">
+    <%= f.label :Fecha_alta %>
+    <%= f.date_select :higdate, id: :advertising_higdate %>
+
+    <%= f.label :Fecha_baja %>
+    <%= f.date_select :lowdate, id: :advertising_lowdate %>
+  </div>
+  <br>
+  <%= f.file_field :image %><br>
+  <br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  </center>
+
+<% end %>
+
+</center>
+
+

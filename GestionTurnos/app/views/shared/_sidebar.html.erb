@@ -5,12 +5,12 @@
   <div class="cl-navblock">
     <div class="menu-space">
       <div class="content">
-        <%= link_to administration_root_path do %>
+        <%= link_to administration_root_path  do   %>
           <div class="sidebar-logo">
-            <div class="logo text-center">
+            <div class="logo text-center"> 
               <div class="row">
                 <div class="col-lg-12 hidden-sm hidden-xs">
-                  <%= image_tag '', class: "logo-cms" %>
+                  <%= image_tag 'sanatorio.png', class: "logo-cms" %>
                 </div>
                 <div class="hidden-lg hidden-md visible-xs-12">
                   <%= image_tag '', class: "logo-mini"%>
@@ -68,7 +68,34 @@
               <li>
                 <%= link_to "Dar de alta un nuevo turno", new_administration_appointment_path %>
               </li>
-                <a target="_blank" href="http://localhost:3000/administration/pantalla">Abrir ventana de turnos</a>
+                
+            </ul>
+            <a href="#">
+              <i class="fa fa-folder"></i>
+              <span> Ventana emergente</span>
+            </a>
+            <ul class="sub-menu">
+              <li class="">
+                <%= link_to "Listado de propagandas", administration_advertisings_path %>
+              </li>
+              <li>
+                <%= link_to "Agregar propaganda", new_administration_advertising_path %>
+              </li>
+                <a target="_blank" href="http://localhost:3000/administration/pantalla">    Abrir ventana de turnos</a>
+            </ul>
+
+
+            <a href="#">
+              <i class="fa fa-folder"></i>
+              <span> Administrar pag. web</span>
+            </a>
+            <ul class="sub-menu">
+              <li class="">
+                <%= link_to "Alta imagen principal" %>
+              </li>
+                <li class="">
+                <%= link_to "Listado de imagenes" %>
+              </li>
             </ul>
           </li>
           <li>

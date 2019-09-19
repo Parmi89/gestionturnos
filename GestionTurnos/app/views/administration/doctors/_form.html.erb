@@ -1,4 +1,4 @@
-<center>
+
   <%= form_with(model: [ :administration, doctor ], local: true) do |f| %>
   <% if doctor.errors.any? %>
     <div id="error_explanation">
@@ -10,30 +10,30 @@
       </ul>
     </div>
   <% end %>
-<br><br>
+<br>
 
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :consulting_room %>
-    <%= f.text_field :consulting_room %>
-  </div>
-
-  <div class="field">
-    <%= f.label :specialty %>
-    <%= f.text_field :specialty %>
-  </div>
-
+<div class="field">
+  <%= f.label :Apellido %>
+  <%= f.text_field :last_name, class: 'form-control',:maxlength => 100 %>
+</div>
+<br>
+<div class="field">
+  <%= f.label :Nombre %>
+  <%= f.text_field :first_name, class: 'form-control',:maxlength => 100 %>
+</div>
+<br>
+<div class="field">
+  <%= f.label :Consultorio %>
+  <%= f.text_field :consulting_room, class: 'form-control',:maxlength => 100 %>
+</div>
+<br>
+<div class="field">
+  <%= f.label :Especialidad %>
+  <%= f.text_field :speciality, class: 'form-control',:maxlength => 100 %>
+</div>
+<br><br><center>
   <div class="actions">
     <%= f.submit 'Aceptar' %>
-  </div>
+  </center></div>
 <% end %>
 </center>

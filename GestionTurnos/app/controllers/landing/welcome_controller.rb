@@ -1,5 +1,5 @@
-class Landing::WelcomeController < ApplicationController
- 
-  def home
-  end
+class Landing::WelcomeController < Landing::BaseController
+	layout "landing"
 end
+
+

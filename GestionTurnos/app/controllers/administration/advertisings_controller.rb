@@ -19,7 +19,6 @@ class Administration::AdvertisingsController < Administration::BaseController
 
   # GET /advertisings/1/edit
   def edit
-    @decorated_advertising = Administration::AdvertisingPresenter.new(@advertising, view_context)
 
   end
 

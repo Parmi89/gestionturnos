@@ -1,14 +1,14 @@
-<center><h2>Pagina de ingresos </h2>
+<center><br><h1>Pagina de ingresos </h1>
 <br>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true,placeholder: :email, autocomplete: "email" %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: :contraseña %>
   </div>
 
   <% if devise_mapping.rememberable? %>
@@ -19,7 +19,7 @@
   <% end %>
 <br>
   <div class="actions">
-    <%= f.submit "Ingresar" %>
+    <%= f.submit "Ingresar", class: "btn btn-primary" %>
   </div>
 <% end %>
 <br>

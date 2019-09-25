@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   end
   devise_for :user_doctors
   namespace :user_doctor do
+  root "home#index"
   end
 
 end

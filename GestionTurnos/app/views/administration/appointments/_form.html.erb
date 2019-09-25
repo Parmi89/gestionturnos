@@ -12,34 +12,31 @@
   <% end %>
 
 
-<br><center>
-
+<br>
   <div class="field">   
     <%= f.label :doctor_id %>
-    <%= f.text_field :doctor_id %> 
+    <%= f.text_field :doctor_id, class: 'form-control',:maxlength => 100 %> 
  </div>
     <div class="field">
   <%= f.label :Paciente %>
-  <%= f.text_field :patient_id %>
+  <%= f.text_field :patient_id, class: 'form-control',:maxlength => 100 %>
   </div>
   <div class="field">
      <%= f.label :Fecha %>
-      <%= f.text_field :date %>
+      <%= f.text_field :date, class: 'form-control',:maxlength => 100 %>
   </div>
   <div class="field">
      <%= f.label :Motivo %>
-     <%= f.text_field :reason %>
+     <%= f.text_field :reason, class: 'form-control',:maxlength => 100 %>
   </div>
   <div class="field">
      <%= f.label :Estado %>
-     <%= f.text_field :state  %> 
+     <%= f.text_field :state, class: 'form-control',:maxlength => 100  %> 
 <br><br>
-  </div>
+  </div><center>
   <div class="actions" >
+  <%= f.submit "Aceptar", class: "btn btn-primary" %></center>
 
-
-    <%= f.submit 'Aceptar' %>
   </div>
 
 <% end %>
-</center>

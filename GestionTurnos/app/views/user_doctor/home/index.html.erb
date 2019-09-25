@@ -1,0 +1,19 @@
+<h1>Turnos del dia</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th><center><strong>Paciente</center></strong></th>
+      <th><center><strong>Motivo de la consulta</center></strong></th>
+      <th><center><strong>Estado del turno</center></strong></th> 
+    </tr>
+  </thead>
+    <% @appointment.each do |appointment| %>
+   <scope="row">
+      <tr>
+        <td><center><%=  appointment.patient.last_name %> <%=  appointment.patient.first_name %></center></td>
+        <td><center><%= appointment.reason %></center></td>
+        <td><center><%= appointment.state %></center></td>
+    <% end %>
+</tr>  
+</table>

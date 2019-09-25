@@ -1,4 +1,4 @@
-<center>
+
   <%= form_with(model: [ :administration, patient ], local: true) do |f| %>
  <% if patient.errors.any? %>
   <div id="error_explanation">
@@ -12,39 +12,40 @@
     </div>
   <% end %>
   
-<br><br>
+<br>
   <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+    <%= f.label :Apellido%>
+    <%= f.text_field :last_name, class: 'form-control',:maxlength => 100 %>
   </div>
-
+  <br>
   <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+    <%= f.label :Nombre %>
+    <%= f.text_field :first_name, class: 'form-control',:maxlength => 100 %>
   </div>
-
+  <br>
   <div class="field">
-    <%= f.label :dni %>
-    <%= f.number_field :dni %>
+    <%= f.label :Dni %>
+    <%= f.number_field :dni, class: 'form-control',:maxlength => 100 %>
   </div>
-
+  <br>
   <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
+    <%= f.label :Direccion %>
+    <%= f.text_field :address, class: 'form-control',:maxlength => 100 %>
   </div>
-
+  <br>
   <div class="field">
-    <%= f.label :coverage %>
-    <%= f.text_field :coverage %>
+    <%= f.label :Obra_Social %>
+    <%= f.text_field :coverage, class: 'form-control',:maxlength => 100 %>
   </div>
-
+  <br>
   <div class="field">
-    <%= f.label :observations %>
-    <%= f.text_field :observations %>
+    <%= f.label :Observaciones %>
+    <%= f.text_field :observations, class: 'form-control',:maxlength => 100 %>
   </div>
+  <br><br>
+  <center>
+  <%= f.submit "Aceptar", class: "btn btn-primary" %>
 
-  <div class="actions">
-    <%= f.submit 'Confirmar'%>
-  </div>
+ </div>
+  </center>
 <% end %>
-</center>

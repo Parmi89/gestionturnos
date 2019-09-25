@@ -1,5 +1,5 @@
 class Administration::PantallaController < Administration::BaseController
-	layout "probando"
+	layout "pantalla"
   def pantalla
 
   @doctor = Doctor.all

@@ -1,0 +1,45 @@
+    <script>
+  (function(){
+    setInterval(
+      function(){
+        document.location.reload()
+        },
+        100
+      })()
+</script>
+
+<div class="container " >
+<div class="row">
+    <div class="col-12 container-header">
+  <br>
+      <%= image_tag 'sanatorio.png', class: "logo-cms" %>
+    </div>
+  </div>    
+
+  <div class="row no-gutters">
+  <div class="col-12 col-sm-6 col-md-8">
+  <%= render "shared/carrouselpantalla"%>
+  </div>
+  <div class="col-6 col-md-4  ">
+ <table class="table table-striped table-container">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Paciente</th>
+      <th scope="col">Turno</th>
+      <th scope="col">Consultorio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <% @appointment.each do |appointment| %>
+      <th scope="row"></th>
+      <td><%= appointment.patient.last_name %> <%=  appointment.patient.first_name %></td>
+      <td><center><%= appointment.id %></center></td>
+      <% @doctor.each do |doctor|  %>
+      <% end %>
+      <td><center><%= appointment.doctor.consulting_room %></center></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

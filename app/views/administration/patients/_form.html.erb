@@ -1,0 +1,45 @@
+
+  <%= form_with(model: [ :administration, patient ], local: true) do |f| %>
+ <% if patient.errors.any? %>
+  <div id="error_explanation">
+  <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+  <ul>
+    <% patient.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :Apellido%>
+    <%= f.text_field :last_name, class: 'form-control',:maxlength => 100 %>
+  </div>
+  <div class="field">
+    <%= f.label :Nombre %>
+    <%= f.text_field :first_name, class: 'form-control',:maxlength => 100 %>
+  </div>
+  <div class="field">
+    <%= f.label :Dni %>
+    <%= f.number_field :dni, class: 'form-control',:maxlength => 100 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Direccion %>
+    <%= f.text_field :address, class: 'form-control',:maxlength => 100 %>
+  </div>
+  <div class="field">
+    <%= f.label :Obra_Social %>
+    <%= f.text_field :coverage, class: 'form-control',:maxlength => 100 %>
+  </div>
+  <div class="field">
+    <%= f.label :Observaciones %>
+    <%= f.text_area :observations, class: 'form-control',:maxlength => 100 %>
+  </div>
+  <br>
+  <center>
+  <%= f.submit "Aceptar", class: "btn btn-primary" %>
+  <%= link_to 'Ver lista', administration_patients_path(patient), class: "btn btn-primary" %> 
+
+ </div>
+  </center>
+<% end %>

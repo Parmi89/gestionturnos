@@ -1,0 +1,33 @@
+<h2>Buscar doctor por:</h2>
+<br>
+<%= form_for_filterrific @filterrific, remote: true, html: { doctor_specialty: 'filterrific-no-ajax-auto-submit', last_name: 'filterrific-no-ajax-auto-submit' } do |f| %>
+
+<div clas = "row">
+<div class="col-md-3">
+  <strong> Apellido:</strong><br>  
+  <%= f.text_field(:last_name, class: "col-md-8 form-control", placeholder: "abc...") %> 
+  </div>
+ <div class="col-md-3">
+    <strong> Especialidades :</strong><br>
+    <%= f.select(
+     :doctor_specialty,
+      @filterrific.select_options[:doctor_specialty],
+      { include_blank: '- - > Desplegar < - - '  }, { class: "form-control"}
+    ) %>
+
+</div></div>
+<br>
+<div clas = "row">
+<div class="col-md-12">
+<br><br>  <%= render_filterrific_spinner %>
+  <%= f.submit 'Buscar', class: "btn btn-success" %>
+  <%= link_to'Borrar campos', reset_filterrific_url,  class: "btn btn-danger" %> 
+<br><br>
+</div>
+</div>
+  <br>
+<% end %>
+<%= render(
+  partial: 'list',
+  locals: { doctors: @doctors }
+) %>

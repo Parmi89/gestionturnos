@@ -1,0 +1,26 @@
+  <%= form_with(model: [ :administration, consulting_rooms ], local: true) do |f| %>
+  <% if consulting_rooms.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(consulting_room.errors.count, "error") %> prohibited this consulting_room from being saved:</h2>
+      <ul>
+      <% specialty.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br>
+<div class="field">
+  <%= f.label :Numero_del_consultorio %>
+  <%= f.text_field :number, class: 'form-control' %>
+</div>
+
+<br><br><center>
+  
+  <div class="actions">
+  <%= f.submit "Aceptar", class: "btn btn-primary" %>
+
+  </center></div>
+<% end %>
+</center>
+

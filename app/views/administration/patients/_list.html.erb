@@ -1,0 +1,26 @@
+<div id="filterrific_results">
+<h2> Resultado de busqueda</h2>
+  <table>
+    <tr>
+      <th><%= filterrific_sorting_link(@filterrific, :Id) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Apellido) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Nombre) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Dni) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Opciones) %></th>
+    </tr>
+    <% patients.each do |patient| %>
+      <tr>
+        <td><%= patient.id %></td>
+        <td><%= patient.last_name %></td>
+        <td><%= patient.first_name %></td>
+        <td><%= patient.dni %></td>
+        <td><%= link_to 'Ver paciente', administration_patient_path(patient) %></td>
+        <td><%= link_to 'Modificar', edit_administration_patient_path(patient) %></td>
+        <td><%= link_to 'Eliminar', administration_patient_path(patient), method: :delete, data: { confirm: 'Usted esta seguro que desea eliminar este paciente?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+<center> 
+<%= will_paginate patients %>
+</center>
+</div>

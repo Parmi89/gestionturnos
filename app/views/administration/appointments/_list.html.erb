@@ -1,0 +1,37 @@
+<div id="filterrific_results">
+
+<h2> Resultado de busqueda</h2>
+  <table>
+    <tr>
+      <th><%= filterrific_sorting_link(@filterrific, :Turno) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Paciente) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Dni) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Doctor) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Consultorio) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Fecha) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Motivo) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Estado) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Opciones) %></th>
+
+      
+    </tr>
+    <% appointments.each do |appointment| %>
+      <tr>
+        <td><%= appointment.id %></td>
+        <td><center><%=  appointment.patient.last_name %>,
+        <%=  appointment.patient.first_name %></center></td>
+        <td><center><%= appointment.patient.dni %></center></td>    
+        <td><center><%= appointment.doctor.first_name %>, <%= appointment.doctor.last_name %> </center></td>
+        <td><center><%= appointment.doctor.consulting_room %></center></td>  
+        <td><center><%= appointment.date %></center></td>
+        <td><center><%= appointment.reason %></center></td>      
+        <td><center><%= appointment.state %></center></td>
+        <td><%= link_to 'Ver', administration_appointment_path(appointment) %></td>
+        <td><%= link_to 'Modificar', edit_administration_appointment_path(appointment) %></td>
+        <td><%= link_to 'Eliminar', administration_appointment_path(appointment), method: :delete, data: { confirm: 'Usted esta seguro?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+

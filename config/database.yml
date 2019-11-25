@@ -1,0 +1,13 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password: root
+
+development:
+  <<: *default
+  database: development_insta_core
+test:
+  <<: *default
+  database: test_insta_core

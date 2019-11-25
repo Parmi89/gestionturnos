@@ -1,0 +1,29 @@
+<h1>Consultorios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Numero</th>
+      <th>Opcion</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @consulting_rooms.each do |consulting_room| %>
+      <tr>
+        <td><%= consulting_room.id %></td>
+        <td><%= consulting_room.number %></td>
+
+        <td><%= link_to 'Eliminar', administration_consulting_room_path(consulting_room), method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br><br>
+<center>
+<%= link_to 'Volver', new_administration_consulting_room_path, class: "btn btn-danger" %>
+ </center> 
+

@@ -1,0 +1,34 @@
+<h2>Buscar turno:</h2>
+<br>
+<%= form_for_filterrific @filterrific, remote: true, html: { id: 'filterrific-no-ajax-auto-submit', dni: 'filterrific-no-ajax-auto-submit', fecha: 'filterrific-no-ajax-auto-submit' } do |f| %>
+
+
+<div class="col-md-3">
+  <strong> Ingrese nro Turno:</strong><br>  
+  <%= f.text_field(:by_id, class: "col-md-8 form-control", placeholder: "123123...") %> 
+  </div>
+<div class="col-md-3 ">
+  <strong> Ingrese nro D.N.I.:</strong><br>  
+  <%= f.text_field(:dni, class: "col-md-8 form-control", placeholder: "123123...") %>
+</div>
+<div class="col-md-4 ">
+  <strong> Ingrese fecha:</strong><br>  
+  <%= f.date_field(:fecha, class: "col-md-8 form-control", placeholder: "01/01/2019...") %>
+</div>
+<div class="col-md-12 mb-12">
+<br> <br> 
+<%= f.submit 'Buscar', class: "btn btn-success" %>
+<%= link_to(
+      'Borrar campos',
+      reset_filterrific_url, class: "btn btn-danger"
+    ) %>
+</div> 
+<div class="col-md-12 mb-12">
+ <br>
+ <% end %>
+
+ <%= render(
+   partial: 'list',
+   locals: { appointments: @appointments }
+ ) %>
+</div>

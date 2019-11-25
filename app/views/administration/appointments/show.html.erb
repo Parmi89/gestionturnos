@@ -1,0 +1,27 @@
+
+<br><br><center>
+<h2>Turnos</h2><br>
+<strong>Nro de turno:</strong>
+<%=  @appointment.id %>
+<br>
+<strong>Doctor:</strong>
+<%=  @appointment.doctor.last_name %>, <%=  @appointment.doctor.first_name %>
+<br>
+<strong>Consultorio:</strong>
+<%=  @appointment.doctor.consulting_room %>
+<br>
+
+<strong>Paciente:</strong>
+<%=  @appointment.patient.last_name %>,<%=  @appointment.patient.first_name %>
+<br>
+<strong>Fecha:</strong>
+<%=  @appointment.date %>
+<br>
+<strong>Motivo:</strong>
+<%=  @appointment.reason %>
+<br>
+
+<br><br>
+<%= link_to 'Modificar', edit_administration_appointment_path(@appointment), class: "btn btn-success"  %> 
+  <%= link_to 'Ver lista', administration_appointments_path(), class: "btn btn-primary"  %>
+</center>

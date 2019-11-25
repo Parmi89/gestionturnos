@@ -1,0 +1,15 @@
+   <!-- BOTONERA -->
+  <% if user_signed_in? %>
+  <button type="button" class= "btn btn-success btn-lg btn-block">
+  <%= link_to 'Salir', destroy_user_session_path,  method: :delete, data: { confirm: 'Usted esta seguro que desea SALIR?' }    %> 
+  
+  </li>
+  <%else%>
+  <button type="button" class= "btn btn-success btn-lg btn-block">
+  <%= link_to 'ES NECESARIO INICIAR SESION', new_user_session_path %>
+  <% end %></button>
+
+    <!-- SALUDO INICIAL -->
+    <% if user_signed_in? %>  
+    <h2>Bienvenido: <%= current_user.email %> </h2>
+    <% end %>

@@ -1,0 +1,28 @@
+<h1>Especialidades</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Opcion</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @specialtys.each do |specialty| %>
+      <tr>
+        <td><%= specialty.id %></td>
+        <td><%= specialty.name %></td>
+        <td><%= link_to 'Eliminar', administration_specialty_path(specialty), method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br><br>
+<center>
+<%= link_to 'Volver', new_administration_specialty_path, class: "btn btn-danger" %>
+ </center> 
+

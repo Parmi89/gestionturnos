@@ -1,0 +1,17 @@
+<div id="head-nav" class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav navbar-right user-nav">
+      <li class="dropdown profile_menu">
+        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+          <span>Bienvenido <%= current_user.email %></span>
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+          <%= link_to 'Salir', destroy_user_session_path, method: :delete %>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

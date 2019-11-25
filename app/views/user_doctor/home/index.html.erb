@@ -1,0 +1,77 @@
+  <div class="col-sm-12">
+  <br/>
+  <br/>
+  <h2>Pacientes por atender</h2>
+  <table>
+    <thead>
+         <tr>
+                <th>Turno</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>Motivo</th>
+                <th>Estado</th>
+                <th>Opciones</th>
+            </tr>
+    </thead>
+    </tr>
+    <% Appointment.pendiente.each do |pendiente| %>
+      <tr>
+        <td><%= pendiente.id %></td>
+        <td><%= pendiente.patient.last_name %></td>
+        <td><%= pendiente.patient.first_name %></td>
+        <td><%= pendiente.reason %></td>
+        <td><%= pendiente.state %></td>
+        <td><%= "LLAMAR" %></td>
+      </tr>
+    <% end %>
+  </table>
+  <br><br>
+  </div>
+  <div class="col-sm-6">
+  <h2>Pacientes llamados pendientes</h2>
+  <table>
+        <thead>
+         <tr>
+                <th>Turno</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>Motivo</th>
+                <th>Estado</th>
+            </tr>
+    </thead>
+    </tr>
+    <% Appointment.llamado.each do |llamado| %>
+      <tr>
+        <td><%= llamado.id %></td>
+        <td><%= llamado.patient.last_name %></td>
+        <td><%= llamado.patient.first_name %></td>
+        <td><%= llamado.reason %></td>
+        <td><%= llamado.state %></td>
+      </tr>
+    <% end %>
+  </table><br>
+  </div>
+  <div class="col-sm-6">
+  <h2>Pacientes atendidos</h2>
+  <table>
+        <thead>
+         <tr>
+                <th>Turno</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>Motivo</th>
+                <th>Estado</th>
+            </tr>
+    </thead>
+    </tr>
+    <% Appointment.atendido.each do |atendido| %>
+      <tr>
+        <td><%= atendido.id %></td>
+        <td><%= atendido.patient.last_name %></td>
+        <td><%= atendido.patient.first_name %></td>
+        <td><%= atendido.reason %></td>
+        <td><%= atendido.state %></td>
+      </tr>
+    <% end %>
+  </table><br>
+  </div>

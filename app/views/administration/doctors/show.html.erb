@@ -1,0 +1,33 @@
+
+<center><br>
+<h2>Doctor</h2>
+	
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @doctor.last_name %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @doctor.first_name %>
+</p>
+ 
+<p>
+  <strong>Consultorio:</strong>
+  <% @doctor.consulting_rooms.each do |consulting_room| %>
+  <%= consulting_room.number %>
+<% end %>
+
+</p>
+
+<p>
+  <strong>Especialidad:</strong>
+  <% @doctor.specialties.each do |specialty| %>
+	<%= specialty.name %>
+<% end %>
+</p>
+
+<%= link_to 'Ver lista', administration_doctors_path, class: "btn btn-primary"  %>
+</center>

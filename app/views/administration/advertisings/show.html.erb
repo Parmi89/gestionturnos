@@ -1,0 +1,38 @@
+
+<center>
+<p id="notice"><%= notice %></p>
+<h1>Publicidad</h1>
+<br>
+<p>
+<strong>Titulo:</strong>
+  <%= @advertising.title %>
+</p>
+
+<p>
+  <strong>Notas:</strong>
+  <%= @advertising.observations %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @advertising.state %>
+</p>
+
+<p>
+  <strong>Fecha de alta:</strong>
+  <%= @advertising.higdate %>
+</p>
+
+<p>
+  <strong>Fecha de baja:</strong>
+  <%= @advertising.lowdate %>
+</p>
+ 
+<% if @advertising.image.attached? %>
+  <strong>Imagen que se mostrara:</strong><br>
+<%= image_tag(@advertising.image, class: 'img-poi')%>
+
+<% end %>
+<br><br>
+<%= link_to 'Ver la lista', administration_advertisings_path %>
+</center>

@@ -1,0 +1,42 @@
+  <%= form_with(model: [ :administration, doctor ], local: true) do |f| %>
+  <% if doctor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(doctor.errors.count, "error") %> prohibited this doctor from being saved:</h2>
+      <ul>
+      <% doctor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br>
+<div class="field">
+  <%= f.label :Apellido %>
+  <%= f.text_field :last_name, class: 'form-control',:maxlength => 100 %>
+</div>
+<div class="field">
+  <%= f.label :Nombre %>
+  <%= f.text_field :first_name, class: 'form-control',:maxlength => 100 %>
+</div>
+<div>
+<%= f.label :Consultorio %><br>
+<%= f.select(:consulting_room, ConsultingRoom.all.collect {|d| [ d.number, d.id ] } , {} , { multiple:true,  class: 'form-control'}, ) %>
+<br>
+</div>
+<br>
+<div>
+
+<%= f.label :Especialidad %><br>
+<%= f.select(:specialty, Specialty.all.collect {|d| [ d.name, d.id ] } , {} , { multiple:true, class: 'form-control'}, ) %>
+<br><br><br>
+
+</div>
+<br><br><center>
+  <div class="actions">
+  <%= f.submit "Aceptar", class: "btn btn-success" %>
+  <%= link_to 'Volver a ver la listas', administration_doctors_path, class: "btn btn-primary"  %>
+
+
+  </center></div>
+<% end %>
+</center>

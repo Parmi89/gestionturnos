@@ -1,0 +1,37 @@
+  <%= form_with(model: [ :administration, appointment ], local: true) do |f| %>
+  <% if appointment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+      <ul>
+      <% appointment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br>
+<div class="field">
+<%= f.label :Elija_el_nombre_del_doctor %><br>
+<%= f.select(:doctor_id, Doctor.all.collect {|d| [d.fullname, d.id] }, {}, { class:  "dropdownSelect" } ) %>
+</div>
+<br>
+<div class="field">
+<%= f.label :Elija_el_nombre_del_paciente %><br>
+<%= f.select(:patient_id, Patient.all.collect {|d| [d.fullname, d.id  ] }, {}, { class:  "dropdownSelect" } ) %>
+</div><br>
+  <div>
+     <%= f.label :Fecha %><br>
+      <%= f.date_field :date %>
+  </div><br>
+  <div class="field">
+     <%= f.label :Motivo %>
+     <%= f.text_area :reason, class: 'form-control',:maxlength => 100 %>
+  </div><br><br>
+  <center>
+  <div class="actions" >
+  <%= f.submit "Aceptar", class: "btn btn-success" %>
+  <%= link_to 'Ver lista', administration_appointments_path(), class: "btn btn-primary"  %></center>
+
+  </div>
+
+<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  observations: MyText
+  state: MyString
+  higdate: 2019-09-13
+  lowdate: 2019-09-13
+
+two:
+  title: MyString
+  observations: MyText
+  state: MyString
+  higdate: 2019-09-13
+  lowdate: 2019-09-13

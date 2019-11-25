@@ -1,0 +1,30 @@
+<h2>Buscar paciente por:</h2>
+<br>
+<%= form_for_filterrific @filterrific, remote: true, html: { id: 'filterrific-no-ajax-auto-submit', dni: 'filterrific-no-ajax-auto-submit', last_name: 'filterrific-no-ajax-auto-submit'} do |f| %>
+
+
+<div class="col-md-3">
+  <strong> Ingrese nro de Id:</strong><br>  
+  <%= f.text_field(:by_id, class: "col-md-8 form-control", placeholder: "123123...") %> 
+  </div>
+<div class="col-md-3">
+  <strong> Ingrese nro de D.N.I:</strong><br>  
+  <%= f.text_field(:dni, class: "col-md-8 form-control", placeholder: "123123...") %> 
+  </div>
+<div class="col-md-3">
+  <strong> Ingrese apellido:</strong><br>  
+  <%= f.text_field(:last_name, class: "col-md-8 form-control" , placeholder: "abc...") %> 
+  </div>
+ <br><br><br><br> 
+<div class="col-md-12">
+  <%= render_filterrific_spinner %>
+    <%= f.submit 'Buscar', class: "btn btn-success" %>
+   <%= link_to'Borrar campos',reset_filterrific_url,  class: "btn btn-danger" %> 
+  <br><br>
+</div>
+  <br>
+<% end %>
+<%= render(
+  partial: 'list',
+  locals: { patients: @patients }
+) %>

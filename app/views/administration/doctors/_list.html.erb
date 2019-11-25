@@ -1,0 +1,34 @@
+<div id="filterrific_results">
+
+<h2> Resultado de busqueda</h2>
+  <table>
+    <tr>
+      <th><%= filterrific_sorting_link(@filterrific, :Apellido) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Nombre) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Consultorio) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Especialidades) %></th>
+      <th><%= filterrific_sorting_link(@filterrific, :Opciones) %>  </th>
+    </tr>
+    <% doctors.each do |doctor| %>
+      <tr>
+        <td><%= doctor.last_name %></td>
+        <td><%= doctor.first_name %></td>
+        <td>        
+        <% doctor.consulting_rooms.each do |consulting_room| %>
+        <%= consulting_room.number %>
+        <%= doctor.consulting_rooms.count == 1 ? "": "-" %>  
+        <% end %>
+        </td>
+        <td>        
+        <% doctor.specialties.each do |specialty| %>
+        <%= specialty.name %>        
+        <%= doctor.specialties.count == 1 ? "": "-" %>  
+        <% end %>
+        </td>        
+        <td><%= link_to 'Ver solo este doctor', administration_doctor_path(doctor) %></td>
+        <td><%= link_to 'Modificar', edit_administration_doctor_path(doctor) %></td>
+        <td><%= link_to 'Eliminar', administration_doctor_path(doctor), method: :delete, data: { confirm: 'Usted esta seguro que desea eliminar este doctor?' } %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
